@@ -1,7 +1,7 @@
 import chanutils.torrent
 from chanutils import get_doc, get_json, select_all, select_one, get_attr
 from chanutils import get_text, get_text_content, replace_entity, byte_size
-from chanutils import movie_title_year
+from chanutils import movie_title_year, series_season_episode
 from playitem import TorrentPlayItem, PlayItemList
 
 _SEARCH_URL = "http://kickass.to/json.php"
@@ -46,6 +46,8 @@ def feed(idx):
     subs = None
     if cat == 'Movies':
       subs = movie_title_year(title)
+    elif cat == 'TV Shows':
+      subs = series_season_episode(title)
     el = select_one(l, "td.nobr")
     size = get_text_content(el)
     el = select_one(l, "td.green")
@@ -70,6 +72,8 @@ def search(q):
     subs = None
     if cat == 'Movies':
       subs = movie_title_year(title)
+    elif cat == 'TV':
+      subs = series_season_episode(title)
     img = '/img/icons/film.svg'
     if cat == 'Music':
       img = '/img/icons/music.svg'
