@@ -4,15 +4,15 @@ from chanutils import get_text, get_text_content, replace_entity, byte_size
 from chanutils import movie_title_year, series_season_episode
 from playitem import TorrentPlayItem, PlayItemList
 
-_SEARCH_URL = "http://kickass.to/json.php"
+_SEARCH_URL = "http://kat.cr/json.php"
 _CAT_WHITELIST = ['Movies', 'TV', 'Anime', 'Music']
 
 _FEEDLIST = [
-  {'title':'Movies', 'url':'http://kickass.to/movies/'},
-  {'title':'TV Shows', 'url':'http://kickass.to/tv/'},
-  {'title':'Anime', 'url':'http://kickass.to/anime/'},
-  {'title':'Music', 'url':'http://kickass.to/music/'},
-  {'title':'Lossless Music', 'url':'http://kickass.to/lossless/'},
+  {'title':'Movies', 'url':'http://kat.cr/movies/'},
+  {'title':'TV Shows', 'url':'http://kat.cr/tv/'},
+  {'title':'Anime', 'url':'http://kat.cr/anime/'},
+  {'title':'Music', 'url':'http://kat.cr/music/'},
+  {'title':'Lossless Music', 'url':'http://kat.cr/lossless/'},
 ]
 
 def name():
@@ -22,7 +22,7 @@ def image():
   return 'icon.png'
 
 def description():
-  return "Kickass Torrents Channel (<a target='_blank' href='http://kickass.to'>http://kickass.to</a>)."
+  return "Kickass Torrents Channel (<a target='_blank' href='http://kat.cr'>http://kat.cr</a>)."
 
 def feedlist():
   return _FEEDLIST
